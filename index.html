@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pandora</title>
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+    <style type="text/css">
+        .body-block, * {
+            font-family: "Helvetica neue",Helvetica,Verdana,Sans-serif;
+        }
+        .body-block{
+            margin: 0 auto;
+            padding: 0 5px 10px 5px;
+            min-width: 1015px;
+            max-width: 1200px;
+        }
+        ol, ul {
+            list-style: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        caption, th, td {
+            text-align: left;
+            font-weight: normal;
+            vertical-align: middle;
+        }
+
+        q, blockquote {
+            quotes: none;
+        }
+        q:before, q:after, blockquote:before, blockquote:after {
+            content: "";
+            content: none;
+        }
+
+        a img {
+            border: none;
+        }
+        * a{
+            font-size: 14px;
+            text-decoration: none;
+            color: #333;
+            cursor: pointer;
+            font-weight: 400;
+        }
+        * a:hover{
+            text-decoration: none;
+            transition: .3s;
+            color: #000000;
+        }
+        * a, h1, h2, h3, h4, h5, h6, p, span{
+            font-size: 16px;
+        }
+        * button, button:focus, a , a:focus{
+            outline: none;
+        }
+        * h2{
+            font-style: normal;
+            font-weight: bold;
+            line-height: normal;
+            font-size: 18px;
+            color: #333;
+            letter-spacing: 0.05em;
+        }
+
+        article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
+            display: block;
+        }
+
+        .container-all-info{
+        }
+        .wrapper-logo-img img{
+            max-width: 275px;
+            min-width: 150px;
+            width: 100%;
+        }
+        .wrapper-logo-img{
+            margin: 10px 20px;
+        }
+        .header-container{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        .nav-list-header{
+            display: flex;
+            align-items: center;
+        }
+        .nav-header{
+            background: url("images/hader-color-block.png") no-repeat;
+            background-size: contain;
+            background-position: center;
+            position: relative;
+        }
+        .nav-header:after{
+            content: '';
+            position: absolute;
+            background: url("images/hader-color-block-before.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            top: -4px;
+            left: -26px;
+            right: 0;
+            width: 104.4%;
+            height: 50px;
+            z-index: -1;
+        }
+        .item-nav-header{
+            margin-right: 10px;
+        }
+        .link-item-nav-header{
+            font-size: 14px;
+            color: #ffffff;
+            position: relative;
+            padding-left: 15px;
+        }
+        .link-item-nav-header:before{
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 4px;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        .link-item-nav-header:hover{
+            color: #ffffff;
+            opacity: 0.7;
+        }
+        .mail-item:before{
+            background-image: url("images/mail-512.png");
+            width: 13px;
+            height: 10px;
+        }
+        .add-store:before{
+            background-image: url("images/plus.png");
+            width: 13px;
+            height: 10px;
+        }
+        .central-block{
+            margin: 0 auto;
+            margin-right: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .img-container{
+            text-align: center;
+            margin: 20px 0;
+            background-color: #fdfdfd;
+        }
+        .img-container img{
+            max-width: 664px;
+            width: 100%;
+        }
+        .container-name-item{
+            position: relative;
+            display: block;
+            padding: 0 16px;
+        }
+        .container-name-item:before,
+        .container-name-item:after{
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 10px;
+            height: 10px;
+            background-color: #9b806d;
+        }
+        .container-name-item:after{
+            right: 0;
+            left: auto;
+        }
+        .name-item{
+            width: 96.5%;
+            background-color: #d1c2b3;
+            height: 30px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .name-item:before,
+        .name-item:after{
+            content: '';
+            position: absolute;
+            left: -8px;
+            width: 20px;
+            height: 20px;
+            border-radius: 100%;
+            background-color: #d1c2b3;
+            top: 5px;
+        }
+        .name-item:after{
+            right: -8px;
+            left: auto;
+        }
+        .name-item h3{
+            text-align: center;
+        }
+        .name-item{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .info-text{
+           font-weight: bold;
+            text-align: center;
+            font-size: 20px;
+            font-style: italic;
+        }
+        .header-content h2{
+            font-size: 23px;
+        }
+        .tabs {
+            position: relative;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .tabs label {
+            color: #ffffff;
+            cursor: pointer;
+            display: block;
+            float: left;
+            width: 24.5%;
+            height: 35px;
+            line-height: 34px;
+            position: relative;
+            top: 2px;
+            text-align: center;
+            background-color: #a68b74;
+            border: 1px solid #e1d9d1;
+            font-size: 14px;
+        }
+
+        .tabs input {
+            position: absolute;
+            left: -9999px;
+        }
+
+        #tab_1:checked  ~ #tab_l1,
+        #tab_2:checked  ~ #tab_l2,
+        #tab_3:checked  ~ #tab_l3,
+        #tab_4:checked  ~ #tab_l4{
+            background: #cfc0b0;
+            border: 1px solid #e1d9d1;
+            color: #333333;
+            top: 1px;
+            z-index: 3;
+        }
+        #tab_1:checked ~ #tab_l1  .tab-name-1:before{
+            background-image: url("images/payment-1.png");
+        }
+        #tab_2:checked ~ #tab_l2 .tab-name-2:before{
+            background-image: url("images/shipping-1.png");
+            top: 2px;
+        }
+        #tab_3:checked ~ #tab_l3 .tab-name-3:before{
+            background-image: url("images/terms-1.png");
+        }
+        #tab_4:checked ~ #tab_l4 .tab-name-4:before{
+            background-image: url("images/returns-1.png");
+        }
+
+        .tabs_cont {
+            position: relative;
+            z-index: 2;
+            min-height: 100px;
+        }
+        .tabs_cont > div {
+            position: absolute;
+            left: -9999px;
+            top: 0;
+            opacity: 0;
+            -moz-transition: opacity .5s ease-in-out;
+            -webkit-transition: opacity .5s ease-in-out;
+            transition: opacity .5s ease-in-out;
+        }
+        #tab_1:checked ~ .tabs_cont #tab_c1,
+        #tab_2:checked ~ .tabs_cont #tab_c2,
+        #tab_3:checked ~ .tabs_cont #tab_c3,
+        #tab_4:checked ~ .tabs_cont #tab_c4{
+            position: static;
+            left: 0;
+            opacity: 1;
+            font-size: 14px;
+            padding: 20px;
+            line-height: 20px;
+        }
+        .tab-name{
+            position: relative;
+            padding-left: 27px;
+        }
+        .tab-name:before{
+           content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 20px;
+            height: 15px;
+        }
+        .tab-name-1:before{
+            background-image: url("images/payment.png");
+        }
+        .tab-name-2:before{
+            background-image: url("images/shipping.png");
+            top: 2px;
+        }
+        .tab-name-3:before{
+            background-image: url("images/terms.png");
+        }
+        .tab-name-4:before{
+            background-image: url("images/returns.png");
+        }
+        .tab-name-3,
+        .tab-name-4{
+            padding-left: 20px;
+        }
+        .wrapper-info{
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            background-color: #f9fefd;
+            padding: 15px;
+        }
+        .right-sidebar{
+            min-width: 200px;
+            max-width: 200px;
+        }
+        .container-product-img img{
+            max-width: 158px;
+            min-width: 100px;
+            width: 100%;
+        }
+        .name-item-sidebar h3{
+            color: #ffffff;
+        }
+        .link-sidebar{
+            padding: 5px;
+            border-bottom: 1px dashed #333333;
+            width: 100%;
+            display: flex;
+        }
+        .list-sidebar{
+            padding-left: 0;
+        }
+        .link-sidebar:hover{
+            opacity: 0.5;
+            transition: .3s;
+        }
+        .next-container-name-item:before,
+        .next-container-name-item:after{
+            background-color: #cfc0b0;
+        }
+        .next-container-name-item .name-item,
+        .next-container-name-item .name-item:before,
+        .next-container-name-item .name-item:after{
+            background-color: #9b806d;
+        }
+        .link-product{
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .about-product{
+            font-size: 12px;
+            text-align: center;
+            line-height: 20px;
+        }
+        .price-product{
+            font-size: 20px;
+            margin: 0;
+        }
+        .product-list{
+           margin-top: 15px;
+            padding-left: 0;
+        }
+        .item-product{
+            margin-bottom: 15px;
+        }
+        .item-product:last-child{
+            margin-bottom: 0;
+        }
+        .wrapper-product-list{
+            overflow: auto;
+            max-height: 980px;
+        }
+        .product-list{
+            height: auto;
+        }
+        .top-footer{
+            background-color: #f4efeb;
+        }
+        .content-top-footer{
+            margin: 0 auto;
+            text-align: center;
+        }
+        .top-footer{
+            padding: 15px;
+        }
+        .dancing-text{
+            font-family: 'Dancing Script', cursive;
+            text-align: center;
+            font-size: 25px;
+        }
+        .content-top-footer p{
+            font-size: 20px;
+            margin: 5px 0;
+        }
+        .bottom-footer{
+            background-color: #9b806d;
+            padding: 55px 15px 15px;
+        }
+        .list-footer-nav{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .link-footer-nav{
+            position: relative;
+            color: #ffffff;
+            font-size: 14px;
+            padding-top: 50px;
+        }
+        .link-footer-nav:hover{
+            opacity: 0.7;
+            color: #ffffff;
+        }
+        .link-footer-nav:before{
+            content: '';
+            position: absolute;
+            top: 0;
+            background-size: contain;
+            background-repeat: no-repeat;
+            left: 30%;
+            right: 0;
+            width: 40px;
+            height: 40px;
+        }
+        .prices:before{
+            background-image: url("images/prices.png");
+
+        }
+        .quality:before{
+            background-image: url("images/check.png");
+            left: 38%;
+        }
+        .returns:before{
+            background-image: url("images/return.png");
+        }
+        .service:before{
+            background-image: url("images/talking.png");
+            width: 50px;
+            left: 30%;
+        }
+    </style>
+</head>
+<body class="body-block">
+<div class="container-all-info">
+    <header class="header-container">
+        <div class="wrapper-logo-img">
+            <img src="images/pandora-logo.png"/>
+        </div>
+        <div class="nav-header">
+            <ul class="nav-list-header">
+                <li class="item-nav-header">
+                    <a href="" class="link-item-nav-header mail-item">Click here to contact us</a>
+                </li>
+                <li class="item-nav-header">
+                    <a href="" class="link-item-nav-header add-store">Add store to favorite sellers</a>
+                </li>
+                <li class="item-nav-header">
+                    <a href="" class="link-item-nav-header mail-item">See our customer feedback</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div class="wrapper-info">
+        <div class="central-block">
+            <header class="header-content">
+                <h2>Stunning 8 Carat Marquise G/VS Diamond 18k Gold Heavy Choker Necklace 148 Grams</h2>
+            </header>
+            <div class="img-container">
+                <img src="images/choker.jpg"/>
+            </div>
+            <div class="container-name-item">
+                <div class="name-item">
+                    <h3>Item Description</h3>
+                </div>
+                <div class="content-item">
+                    <p class="info-text">Stunning and Impressive  Heavy 18k Gold 8.00 Carat Marquise Brilliant Diamond Choker Necklace</p>
+                    <p class="info-text">Super stunning and rare, unique heavy choker necklace composed of 144 brilliant white G/VS Diamonds</p>
+                    <p class="info-text">and 8 gorgeous G/VS marquise diamonds. The weight of the necklace is 148.2 grams.</p>
+                    <p class="info-text">A necklace not to be missed and rare opportunity!</p>
+                </div>
+                <div class="tabs">
+                    <input id="tab_1" type="radio" name="tab" checked="checked" />
+                    <input id="tab_2" type="radio" name="tab" />
+                    <input id="tab_3" type="radio" name="tab" />
+                    <input id="tab_4" type="radio" name="tab" />
+
+                    <label for="tab_1" id="tab_l1">
+                        <span class="tab-name tab-name-1">Payment</span></label>
+                    <label for="tab_2" id="tab_l2">
+                        <span class="tab-name tab-name-2">Shipping</span></label>
+                    <label for="tab_3" id="tab_l3">
+                        <span  class="tab-name tab-name-3">Terms</span></label>
+                    <label for="tab_4" id="tab_l4">
+                        <span  class="tab-name tab-name-4">Returns</span></label>
+                    <div style="clear:both"></div>
+
+                    <div class="tabs_cont">
+                        <div id="tab_c1">
+                           About  Courtland Jewels:  Courtland Jewels has been dealing in art and antiques on the internet for 14 years. With a love for fine estate items, we formed Courtland Jewels to bring you fine art, estate diamond, gold and gemstone jewelry pieces and beautiful antiques at an incredible value. Any items we buy are something we would love to display in our own homes. We sell only high quality diamonds and jewelry that we would want to wear ourselves, with generally white color and VS/SI1 Clarity. Diamonds should be as white as possible and also have sparkle and fire!
+                        </div>
+                        <div id="tab_c2">Content of first second</div>
+                        <div id="tab_c3">Content of third tab</div>
+                        <div id="tab_c4">Content of fourth tab</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-sidebar">
+            <div class="container-name-item">
+                <div class="name-item name-item-sidebar">
+                    <h3>Helpful Links</h3>
+                </div>
+            </div>
+            <ul class="list-sidebar">
+                <li class="item-sidebar">
+                    <a href="" class="link-sidebar">Add to Favorite Sellers</a>
+                </li>
+                <li class="item-sidebar">
+                    <a href="" class="link-sidebar">View Feedback</a>
+                </li>
+                <li class="item-sidebar">
+                    <a href="" class="link-sidebar">Contact Seller</a>
+                </li>
+                <li class="item-sidebar">
+                    <a href="" class="link-sidebar">View other items</a>
+                </li>
+            </ul>
+            <div class="container-name-item next-container-name-item">
+                <div class="name-item name-item-sidebar">
+                    <h3>More Items</h3>
+                </div>
+            </div>
+            <div class="wrapper-product-list">
+                <ul class="product-list">
+                    <li class="item-product">
+                        <a href="" class="link-product">
+                            <div class="container-product-img">
+                                <img src="images/img-1.jpg"/>
+                            </div>
+                            <h2 class="about-product">18k Gold South Sea 10-12mm Pearl Nacklace with 2,10 ct Emerald Diamond Clasp</h2>
+                            <h3 class="price-product">
+                                <span>$</span>2,650.00
+                            </h3>
+                        </a>
+                    </li>
+                    <li class="item-product">
+                        <a href="" class="link-product">
+                            <div class="container-product-img">
+                                <img src="images/img-2.jpg"/>
+                            </div>
+                            <h2 class="about-product">Staining 8 Carat Marquise G/VS Diamond 18k Gold Heavy Choker Necklace 148 Grams</h2>
+                            <h3 class="price-product">
+                                <span>$</span>22,500.00
+                            </h3>
+                        </a>
+                    </li>
+                    <li class="item-product">
+                        <a href="" class="link-product">
+                            <div class="container-product-img">
+                                <img src="images/img-3.jpg"/>
+                            </div>
+                            <h2 class="about-product">Vintage 18k Gold Topaz Kunzite Gemshones 1.90ct G/VS Diamond Pendant Necklace</h2>
+                            <h3 class="price-product">
+                                <span>$</span>1,500.00
+                            </h3>
+                        </a>
+                    </li>
+                    <li class="item-product">
+                        <a href="" class="link-product">
+                            <div class="container-product-img">
+                                <img src="images/img-4.jpg"/>
+                            </div>
+                            <h2 class="about-product">ELIFREIF VS2.70ct Diamond 18k Gold Blue Topaz Gemstone Necklace Pendant</h2>
+                            <h3 class="price-product">
+                                <span>$</span>3,6500.00
+                            </h3>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer class="footer-content-product">
+        <div class="top-footer">
+            <div class="content-top-footer">
+                <span class="dancing-text">Why Shop Whith Us?</span>
+                <p>I only sell top quality diamonds and stones. I only carry high quality vintage jewelry pleces.I care about my customers loving their purchases. <span class="dancing-text">They Oonly keep if they love it!</span></p>
+            </div>
+        </div>
+        <div class="bottom-footer">
+            <ul class="list-footer-nav">
+                <li class="item-footer-nav">
+                    <a href="" class="link-footer-nav prices">Unbeatable Prices</a>
+                </li>
+                <li class="item-footer-nav">
+                    <a href="" class="link-footer-nav quality">Exceptional Quality</a>
+                </li>
+                <li class="item-footer-nav">
+                    <a href="" class="link-footer-nav returns">30 days returns</a>
+                </li>
+                <li class="item-footer-nav">
+                    <a href="" class="link-footer-nav service">Exceptional Service</a>
+                </li>
+            </ul>
+        </div>
+
+    </footer>
+</div>
+</body>
+</html>
